@@ -1,0 +1,134 @@
+.banner {
+    background: url('../../assets/images/banner/bg.png');
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero {
+    position: relative;
+    padding-left: 5.208333vw;
+    &__title {
+        color: transparent;
+        text-align: center;
+        line-height: 1;
+        // filter: blur(2px);
+        // animation: filter 1.5s both ease-in-out infinite;
+        &--en {
+            font-size: 7.8125vw;
+            -webkit-text-stroke: 3px #eefbff;
+            animation: light 1.5s both linear infinite;
+            margin-bottom: 40px;
+        }
+        &--cn {
+            font-size: 5.104167vw;
+            color: transparent;
+            -webkit-text-stroke: 3px #fdffa9;
+            // animation: light2 1.5s both ease-in-out infinite;
+            margin-bottom: 100px;
+        }
+    }
+    &__info {
+        font-size: 24px;
+        color: #fff;
+        text-align: center;
+        line-height: 1.58333;
+        // animation: flicker 1.5s both ease-in-out infinite;
+    }
+    &__lightning {
+        position: absolute;
+        filter: blur(3px);
+        // animation: flicker 0.8s both ease-in-out infinite;
+        &--one {
+            top: -75px;
+            left: 0;
+        }
+        &--two {
+            bottom: -92px;
+            right: 0;
+        }
+    }
+    &__titleFlicker {
+        position: absolute;
+        top: -114px;
+        right: -67px;
+        // animation: flicker 0.8s both ease-in-out infinite;
+    }
+}
+
+.vision {
+    position: absolute;
+    width: 50.885416vw;
+    align-self: flex-end;
+    right: 0;
+    bottom: 0;
+}
+
+
+@keyframes filter {
+    0% {
+        filter: blur(2px);
+    }
+    50% {
+        filter: blur(0px);
+    }
+    100% {
+        filter: blur(2px);
+    }
+}
+
+@keyframes light {
+    0% {
+        -webkit-text-stroke: 3px #eefbff;
+        filter: blur(0);
+    }
+    15% {
+        -webkit-text-stroke: 3px #a1fff9;
+        filter: blur(0);
+    }
+    30% {
+        -webkit-text-stroke: 3px #a1fff9;
+        filter: blur(2px);
+    }
+    50% {
+        -webkit-text-stroke: 3px #a1fff9;
+        filter: blur(4px);
+    }
+    60% {
+        -webkit-text-stroke: 3px #a1fff9;
+        filter: blur(2px);
+    }
+    85% {
+        -webkit-text-stroke: 3px #a1fff9;
+        filter: blur(0);
+    }
+    100% {
+        -webkit-text-stroke: 3px #eefbff;
+        filter: blur(0);
+    }
+}
+
+@keyframes light2 {
+    0% {
+        -webkit-text-stroke: 3px #fdffa9;
+    }
+    50% {
+        -webkit-text-stroke: 3px transparent;
+    }
+    100% {
+        -webkit-text-stroke: 3px #fdffa9;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
