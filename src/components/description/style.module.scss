@@ -2,6 +2,80 @@
     :global {
         .description {
             padding-top: 90px;
+            padding-bottom: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        .flashing {
+            position: absolute;
+            &__line {
+                width: 185px;
+                height: 6px;
+                margin: 70px 0;
+                &--one {
+                    background: #9AFFFF;
+                    transform: translate(-50px, 50px) rotate(-45deg);
+                    box-shadow: 0 0 15px #9AFFFF;
+                }
+                &--two {
+                    background: #F19AFF;
+                    transform: translate(40px, -40px) rotate(-45deg);
+                    box-shadow: 0 0 15px #F19AFF;
+                }
+                &--three {
+                    background: #FDFF9A;
+                    transform: translate(-20px, 20px) rotate(-45deg);
+                    box-shadow: 0 0 15px #FDFF9A;
+                }
+            }
+            &--left {
+                top: -80px;
+                left: -40px;
+            }
+            &--right {
+                right: 0;
+                bottom: 0;
+            }
+        }
+        .progressBar {
+            height: 8px;
+            background: #f19aff;
+            border-radius: 10px;
+            margin-top: 70px;
+            width: 0%;
+            width: 100%;
+        }
+        .dec {
+            display: flex;
+            color: #fff;
+            position: relative;
+            &-li {
+                padding-top: 80px;
+                flex: 1;
+                text-align: center;
+                position: relative;
+                &__arrow {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 30px 0 30px 50px;
+                    border-color: transparent transparent transparent #f29aff;
+                    display: block;
+                    border-radius: 3px;
+                    position: absolute;
+                    top: -34px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                &__title {
+                    font-size: 40px;
+                }
+                &__info {
+                    font-size: 24px;
+                    line-height: 1.58333;
+                    margin-top: 36px;
+                }
+            }
         }
     }
 }
