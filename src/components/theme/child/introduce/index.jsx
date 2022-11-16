@@ -1,4 +1,5 @@
 import style from "./style.module.scss";
+import digimon from "@/assets/images/theme/digimon.png";
 
 const Introduce = (props) => {
     const { data, index } = props;
@@ -8,6 +9,9 @@ const Introduce = (props) => {
                 className={`introduce introduce--${data.color} ${(index + 1) % 2}`}
                 style={{ marginLeft: (index + 1) % 2 === 0 ? 'auto' : '0', marginTop: index !==0 ? '30px': '0px' }}
             >
+                {index === 2 && (
+                    <img src={digimon} alt="digimon" className="introduce__digimonImg" />
+                )}
                 <img src={data.img} alt="" className="introduce__img" />
                 <div className="introduce-content">
                     <p className="introduce-content__subtitle">{`WEEK ${

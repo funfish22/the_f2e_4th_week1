@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./assets/style/reset.scss";
 import "./assets/style/fonts.scss";
 import "./assets/style/common.scss";
+import "./assets/icon/style.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
