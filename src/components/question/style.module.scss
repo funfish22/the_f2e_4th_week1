@@ -1,0 +1,12 @@
+.root {
+    :global {
+        .question {
+            &Box {
+                height: 820px;
+                border: 16px solid #fff;
+                border-bottom-width: 20px;
+                border-radius: 12px;
+            }
+        }
+    }
+}
