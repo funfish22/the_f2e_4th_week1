@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 const path = require('path');
 
 export default defineConfig({
+    base: "/the_f2e_4th_week1/",
     build: {
         outDir: 'build',
     },
