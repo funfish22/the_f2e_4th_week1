@@ -5,7 +5,7 @@ const Question = () => {
             <div className="questionRoot">
                 <div className="container">
                     <h1 className="title">常見問題</h1>
-                    <div className="questionBox"></div>
+                    <div className="questionBox">123</div>
                 </div>
             </div>
         </div>
