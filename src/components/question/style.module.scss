@@ -1,12 +1,76 @@
 .root {
     :global {
         .question {
+            &Root {
+                padding-top: 120px;
+            }
             &Box {
                 height: 820px;
                 border: 16px solid #fff;
                 border-bottom-width: 20px;
                 border-radius: 12px;
+                background: #434444;
+                position: relative;
             }
+            &-list {
+                display: flex;
+                background: #2C2D2D;
+                &-tags {
+                    &--active, &:hover {
+                        background: #434444;
+                    }
+                    &__title {
+                        color: #fff;
+                        font-size: 20px;
+                        padding: 15px 30px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            &-block {
+                position: absolute;
+                top: 50px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 50px;
+                overflow-y: auto;
+                &-li {
+                    &__title {
+                        font-size: 20px;
+                        line-height: 1.16667;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 26px;
+                        &:before {
+                            content: '<Q>';
+                            font-size: 48px;
+                            color: #3484c6;
+                            margin-right: 18px;
+                        }
+                    }
+                    & + .question-block-li {
+                        margin-top: 65px;
+                    }
+                    &__answer {
+                        font-size: 16px;
+                        color: #BDBDBD;
+                        display: flex;
+                        line-height: 1.65;
+                        &:before {
+                            content: '<A>';
+                            color: #F24C4C;
+                            font-size: 24px;
+                            margin-right: 12px;
+                            line-height: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .title {
+            margin-bottom: 70px;
         }
     }
 }
