@@ -1,12 +1,10 @@
-import { useEffect, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./style.scss";
 import circleMaskOne from "@/assets/images/troubled/troubled-mask1.png";
 import circleMaskTwo from "@/assets/images/troubled/troubled-mask2.png";
-import setp1 from "@/assets/images/troubled/step1.png";
-import setp2 from "@/assets/images/troubled/step2.png";
-import setp3 from "@/assets/images/troubled/step3.png";
+import troubledData from "./data";
 
 const Troubled = () => {
     gsap.registerPlugin(ScrollTrigger);
@@ -27,15 +25,15 @@ const Troubled = () => {
             })
             .to(q(".step-list:nth-of-type(1)"), {
                 y: 0,
-                opacity: 1
+                opacity: 1,
             })
             .to(q(".step-list:nth-of-type(2)"), {
                 y: 0,
-                opacity: 1
+                opacity: 1,
             })
             .to(q(".step-list:nth-of-type(3)"), {
                 y: 0,
-                opacity: 1
+                opacity: 1,
             });
     }, []);
 
@@ -54,41 +52,19 @@ const Troubled = () => {
             <div className="container">
                 <h1 className="title">你是否也有以下困擾?</h1>
                 <ul className="step">
-                    <li className="step-list">
-                        <div className="step-list-img">
-                            <img
-                                src={setp1}
-                                alt=""
-                                className="step-list-img__img"
-                            />
-                        </div>
-                        <p className="step-list__info">
-                            羨慕別人的酷酷網頁動畫嗎?
-                        </p>
-                    </li>
-                    <li className="step-list">
-                        <div className="step-list-img">
-                            <img
-                                src={setp2}
-                                alt=""
-                                className="step-list-img__img"
-                            />
-                        </div>
-                        <p className="step-list__info">滿足不了同事的許願?</p>
-                    </li>
-                    <li className="step-list">
-                        <div className="step-list-img">
-                            <img
-                                src={setp3}
-                                alt=""
-                                className="step-list-img__img"
-                            />
-                            <span className="step-list-img__decorate">?</span>
-                        </div>
-                        <p className="step-list__info">
-                            動畫技能數太雜無從下手?
-                        </p>
-                    </li>
+                    {troubledData &&
+                        troubledData.map((item, index) => (
+                            <li className="step-list" key={index}>
+                                <div className="step-list-img">
+                                    <img
+                                        src={item.img}
+                                        alt=""
+                                        className="step-list-img__img"
+                                    />
+                                </div>
+                                <p className="step-list__info">{item.text}</p>
+                            </li>
+                        ))}
                 </ul>
             </div>
         </section>
