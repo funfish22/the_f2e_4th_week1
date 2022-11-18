@@ -3,14 +3,38 @@
         .question {
             &Root {
                 padding-top: 120px;
+                padding-bottom: 85px;
             }
             &Box {
                 height: 820px;
+                margin-bottom: 105px;
                 border: 16px solid #fff;
                 border-bottom-width: 20px;
                 border-radius: 12px;
                 background: #434444;
                 position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 175px;
+                    height: 70px;
+                    background: #fff;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -90px;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 650px;
+                    height: 35px;
+                    background: #fff;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -125px;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                }
             }
             &-list {
                 display: flex;
@@ -35,6 +59,15 @@
                 bottom: 0;
                 padding: 50px;
                 overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: #434444;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: #2C2D2D;
+                }
                 &-li {
                     &__title {
                         font-size: 20px;
