@@ -48,6 +48,7 @@
     border-radius: 50%;
     filter: blur(2px);
     position: absolute;
+    animation: zoom 2s both linear infinite;
     &--left1 {
         width: 123px;
         height: 123px;
@@ -75,5 +76,17 @@
         background: radial-gradient(50% 50% at 50% 50%, #EC6A6A 0%, rgba(236, 106, 106, 0) 100%);
         top: 28px;
         right: 118px;
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
     }
 }

@@ -10,8 +10,9 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            &:after, &:before {
-                content: '';
+            &:after,
+            &:before {
+                content: "";
                 position: absolute;
                 width: 164px;
                 height: 164px;
@@ -19,29 +20,29 @@
             }
             &:after {
                 border-top: 3px solid#F1BBBB;
-                border-left: 3px solid #F1BBBB;
+                border-left: 3px solid #f1bbbb;
                 border-top-left-radius: 10px;
                 top: 20px;
                 left: 20px;
             }
             &:before {
-                border-right: 3px solid #9AFFFF;
-                border-bottom: 3px solid #9AFFFF;
+                border-right: 3px solid #9affff;
+                border-bottom: 3px solid #9affff;
                 border-bottom-right-radius: 10px;
                 right: 20px;
                 bottom: 20px;
             }
             &--yellow {
-                border-color: #FDFFA9;
-                box-shadow: 0 0 10px #FDFFA9;
+                border-color: #fdffa9;
+                box-shadow: 0 0 10px #fdffa9;
             }
             &--blue {
-                border-color: #9AFFFF;
-                box-shadow: 0 0 10px #9AFFFF;
+                border-color: #9affff;
+                box-shadow: 0 0 10px #9affff;
             }
             &--purple {
-                border-color: #F19AFF;
-                box-shadow: 0 0 10px #F19AFF;
+                border-color: #f19aff;
+                box-shadow: 0 0 10px #f19aff;
             }
             &-content {
                 margin-left: 66px;
@@ -61,7 +62,7 @@
                 &__info {
                     font-size: 18px;
                     line-height: 1.55556;
-                    color: #BDBDBD;
+                    color: #bdbdbd;
                     margin-bottom: 15px;
                     max-width: 436px;
                 }
@@ -72,6 +73,12 @@
                     border-radius: 10px;
                     padding: 10px 42px;
                     display: inline-block;
+                    transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                    &:hover {
+                        color: #fdffa9;
+                        border-color: #fdffa9;
+                        box-shadow: 0 0 5px #fdffa9;
+                    }
                 }
             }
             &-list {
@@ -81,7 +88,7 @@
                     line-height: 1.25;
                     color: #fff;
                     &:before {
-                        content: '#';
+                        content: "#";
                     }
                 }
             }
