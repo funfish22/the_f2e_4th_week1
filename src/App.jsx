@@ -4,6 +4,7 @@ import Theme from "./components/theme";
 import Description from "./components/description";
 import Contest from "./components/contest";
 import Question from "./components/question";
+import Sponsor from "./components/sponsor";
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <Description />
             <Contest />
             <Question />
+            <Sponsor />
         </main>
     );
 };
