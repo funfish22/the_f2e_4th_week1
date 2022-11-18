@@ -83,10 +83,10 @@ const Contest = () => {
                                         <p className="awards-li-title__text">個人企業獎</p>
                                     </div>
                                     <div className="awards-li-dec">
-                                        <img src={moneySecond} alt="亞軍" className="awards-li__img" />
+                                        <img src={moneyFirst} alt="個人企業獎" className="awards-li__img" />
                                         <div className="awards-li-info">
-                                            <h3 className="awards-li-info__title">NTD 3,000/組</h3>
-                                            <p className="awards-li-info__text">(共六位 )</p>
+                                            <h3 className="awards-li-info__title">NTD 10,000/組</h3>
+                                            <p className="awards-li-info__text">(共三組 )</p>
                                         </div>
                                     </div>
                                 </div>
@@ -95,13 +95,13 @@ const Contest = () => {
                                 <div className="awards-li">
                                     <div className="awards-li-title">
                                         <i className="awards-li-title__icon icon-awards"></i>
-                                        <p className="awards-li-title__text">個人企業獎</p>
+                                        <p className="awards-li-title__text">團體企業獎</p>
                                     </div>
                                     <div className="awards-li-dec">
-                                        <img src={moneyFirst} alt="冠軍" className="awards-li__img" />
+                                        <img src={moneySecond} alt="團體企業獎" className="awards-li__img" />
                                         <div className="awards-li-info">
-                                            <h3 className="awards-li-info__title">NTD 10,000/組</h3>
-                                            <p className="awards-li-info__text">(共三組 )</p>
+                                            <h3 className="awards-li-info__title">NTD 3,000/組</h3>
+                                            <p className="awards-li-info__text">(共六位 )</p>
                                         </div>
                                     </div>
                                 </div>

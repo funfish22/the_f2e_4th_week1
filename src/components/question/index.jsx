@@ -1,5 +1,6 @@
 import { useState, Fragment } from "react";
 import styles from "./style.module.scss";
+import bulb from "@/assets/images/question/bulb.png"
 import questionData from "./data";
 const Question = () => {
     const [tabIndex, setTabIndex] = useState(0);
@@ -11,6 +12,7 @@ const Question = () => {
     return (
         <div className={styles.root}>
             <div className="questionRoot">
+                <img src={bulb} alt="" className="bulb" />
                 <div className="container">
                     <h1 className="title">常見問題</h1>
                     <div className="questionBox">
