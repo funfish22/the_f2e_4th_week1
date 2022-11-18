@@ -10,7 +10,7 @@ const Question = () => {
     };
 
     return (
-        <div className={styles.root}>
+        <section className={styles.root}>
             <div className="questionRoot">
                 <img src={bulb} alt="" className="bulb" />
                 <div className="container">
@@ -56,7 +56,7 @@ const Question = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

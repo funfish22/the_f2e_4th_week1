@@ -12,7 +12,7 @@ import podium from "@/assets/images/contest/podium.png";
 
 const Contest = () => {
     return (
-        <div className={styles.root}>
+        <section className={styles.root}>
             <div className="contestRoot">
                 <div className="container">
                     <div className="contestTitle">
@@ -111,7 +111,7 @@ const Contest = () => {
                     <img src={podium} alt="" className="awards__podium" />
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
