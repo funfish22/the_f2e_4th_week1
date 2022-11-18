@@ -25,6 +25,8 @@
     &-list {
         counter-increment: li;
         position: relative;
+        opacity: 0;
+        transform: translateY(100px);
         &::after {
             content: counter(li);
             position: absolute;
