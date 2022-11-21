@@ -22,10 +22,11 @@ const Theme = () => {
         tl.current = gsap
             .timeline({
                 scrollTrigger: {
-                    trigger: ".theme .container",
+                    trigger: ".theme",
                     start: "top 60%",
-                    end: "+=100",
-                    scrub: 5
+                    endTrigger: ".introducRoot",
+                    end: "top 100%",
+                    scrub: 2
                 },
                 ease: "strong.inOut",
             })
