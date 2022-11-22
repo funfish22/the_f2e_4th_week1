@@ -1,16 +1,49 @@
+import { useEffect, useState } from "react";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import AnimatedNumber from "animated-number-react";
+import contestData from "./data";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./style.module.scss";
 import fistLeft from "@/assets/images/contest/fist-left.png";
 import fistRight from "@/assets/images/contest/fist-right.png";
-import moneyFirst from "@/assets/images/contest/money-first.png";
-import moneySecond from "@/assets/images/contest/money-second.png";
-import moneyThird from "@/assets/images/contest/money-third.png";
 import podium from "@/assets/images/contest/podium.png";
 
 const Contest = () => {
+    const [list, setList] = useState([]);
+    const pattern = {
+        numberWithString: /\d+[\,]\d+/g,
+        numberOnly: /\d+/g,
+    };
+    const formatValue = (_) => {
+        const value = Math.floor(_);
+        if (value >= 10000) {
+            const newValue = value.toString().split("");
+            newValue.splice(2, 0, ",");
+            return newValue.join("");
+        } else if (value >= 1000) {
+            const newValue = value.toString().split("");
+            newValue.splice(1, 0, ",");
+            return newValue.join("");
+        } else {
+            return value;
+        }
+    };
+    const onSlideChange = (swiper) => {
+        if(!!list[swiper.realIndex].data) {
+            const newList = JSON.parse(JSON.stringify(list))
+            newList[swiper.realIndex].data.prizeValue = 0
+            setList(newList)
+            setTimeout(() => {
+                setList(contestData)
+            }, 100)
+        }
+    };
+    useEffect(() => {
+        const list = JSON.parse(JSON.stringify(contestData))
+        setList(list);
+    }, []);
     return (
         <section className={styles.root}>
             <div className="contestRoot">
@@ -52,61 +85,79 @@ const Contest = () => {
                 <div className="awards">
                     <div className="container">
                         <h2 className="awards__title">獎項</h2>
-                        <Swiper
-                            modules={[Navigation]}
-                            spaceBetween={30}
-                            slidesPerView={3}
-                            navigation
-                            loop={true}
-                            centeredSlides={true}
-                            className="awards-swiper"
-                        >
-                            <SwiperSlide>
-                                <div className="awards-li">
-                                    <div className="awards-li-title">
-                                        <i className="awards-li-title__icon icon-awards"></i>
-                                        <p className="awards-li-title__text">初選佳作</p>
-                                    </div>
-                                    <div className="awards-li-dec">
-                                        <img src={moneyThird} alt="數位獎狀" className="awards-li__img" />
-                                        <div className="awards-li-info">
-                                            <h3 className="awards-li-info__title">數位獎狀</h3>
-                                            <p className="awards-li-info__text">(共六十位 )</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="awards-li">
-                                    <div className="awards-li-title">
-                                        <i className="awards-li-title__icon icon-awards"></i>
-                                        <p className="awards-li-title__text">個人企業獎</p>
-                                    </div>
-                                    <div className="awards-li-dec">
-                                        <img src={moneyFirst} alt="個人企業獎" className="awards-li__img" />
-                                        <div className="awards-li-info">
-                                            <h3 className="awards-li-info__title">NTD 10,000/組</h3>
-                                            <p className="awards-li-info__text">(共三組 )</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className="awards-li">
-                                    <div className="awards-li-title">
-                                        <i className="awards-li-title__icon icon-awards"></i>
-                                        <p className="awards-li-title__text">團體企業獎</p>
-                                    </div>
-                                    <div className="awards-li-dec">
-                                        <img src={moneySecond} alt="團體企業獎" className="awards-li__img" />
-                                        <div className="awards-li-info">
-                                            <h3 className="awards-li-info__title">NTD 3,000/組</h3>
-                                            <p className="awards-li-info__text">(共六位 )</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        </Swiper>
+                        {list.length > 0 && (
+                            <Swiper
+                                modules={[Navigation]}
+                                spaceBetween={30}
+                                slidesPerView={3}
+                                navigation
+                                loop={true}
+                                centeredSlides={true}
+                                className="awards-swiper"
+                                onSlideChange={onSlideChange}
+                            >
+                                {list.map((item, index) => {
+                                    return (
+                                        <SwiperSlide key={index}>
+                                            <div className="awards-li">
+                                                <div className="awards-li-title">
+                                                    <i className="awards-li-title__icon icon-awards"></i>
+                                                    <p className="awards-li-title__text">
+                                                        {item.title}
+                                                    </p>
+                                                </div>
+                                                <div className="awards-li-dec">
+                                                    <img
+                                                        src={item.img}
+                                                        alt={item.imgName}
+                                                        className="awards-li__img"
+                                                    />
+                                                    <div className="awards-li-info">
+                                                        <h3 className="awards-li-info__title">
+                                                            {
+                                                                item.price
+                                                                    .replace(
+                                                                        pattern.numberWithString,
+                                                                        ""
+                                                                    )
+                                                                    .split(
+                                                                        " "
+                                                                    )[0]
+                                                            }{" "}
+                                                            {item.data && (
+                                                                <AnimatedNumber
+                                                                    value={
+                                                                        item
+                                                                            .data
+                                                                            .prizeValue
+                                                                    }
+                                                                    formatValue={
+                                                                        formatValue
+                                                                    }
+                                                                />
+                                                            )}
+                                                            {
+                                                                item.price
+                                                                    .replace(
+                                                                        pattern.numberWithString,
+                                                                        ""
+                                                                    )
+                                                                    .split(
+                                                                        " "
+                                                                    )[1]
+                                                            }
+                                                        </h3>
+                                                        <p className="awards-li-info__text">
+                                                            {item.unit}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                    );
+                                })}
+                            </Swiper>
+                        )}
                     </div>
                     <img src={podium} alt="" className="awards__podium" />
                 </div>
