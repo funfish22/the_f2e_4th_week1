@@ -16,7 +16,8 @@ const Description = () => {
                 scrollTrigger: {
                     trigger: ".description",
                     start: "top 70%",
-                    end: "bottom 80%",
+                    endTrigger: ".contestRoot",
+                    end: "top 100%",
                     scrub: !0,
                 },
             })
@@ -30,7 +31,8 @@ const Description = () => {
             scrollTrigger: {
                 trigger: ".description",
                 start: "top 65%",
-                end: "bottom -10%",
+                endTrigger: ".contestRoot",
+                end: "top 0%",
                 scrub: !0,
                 onEnter: () =>
                     q(".dec-li:nth-of-type(1)")[0].classList.add("dec-li--active"),
@@ -45,8 +47,9 @@ const Description = () => {
         tl.current = gsap.to(q(".description"), {
             scrollTrigger: {
                 trigger: ".description",
-                start: "top 50%",
-                end: "bottom -10%",
+                start: "top 55%",
+                endTrigger: ".contestRoot",
+                end: "top 0%",
                 scrub: !0,
                 onEnter: () =>
                     q(".dec-li:nth-of-type(2)")[0].classList.add("dec-li--active"),
@@ -61,8 +64,9 @@ const Description = () => {
         tl.current = gsap.to(q(".description"), {
             scrollTrigger: {
                 trigger: ".description",
-                start: "top 35%",
-                end: "bottom -10%",
+                start: "top 45%",
+                endTrigger: ".contestRoot",
+                end: "top 0%",
                 scrub: !0,
                 onEnter: () =>
                     q(".dec-li:nth-of-type(3)")[0].classList.add("dec-li--active"),
