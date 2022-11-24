@@ -11,73 +11,195 @@ const Description = () => {
     const tl = useRef();
 
     useLayoutEffect(() => {
-        tl.current = gsap
-            .timeline({
-                scrollTrigger: {
-                    trigger: ".description",
-                    start: "top 70%",
-                    endTrigger: ".contestRoot",
-                    end: "top 100%",
-                    scrub: !0,
-                },
-            })
-            .to(q(".progressBar"), {
-                width: "100%",
-            });
+        ScrollTrigger.matchMedia({
+            "(min-width: 992px)": function () {
+                tl.current = gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".description",
+                            start: "top 70%",
+                            endTrigger: ".contestRoot",
+                            end: "top 100%",
+                            scrub: !0,
+                        },
+                    })
+                    .to(q(".progressBar"), {
+                        width: "100%",
+                    });
+            },
+            "(max-width: 991px)": function () {
+                tl.current = gsap
+                    .timeline({
+                        scrollTrigger: {
+                            trigger: ".description",
+                            start: "top 60%",
+                            scrub: !0,
+                        },
+                    })
+                    .to(q(".progressBar"), {
+                        height: "182.05128vw",
+                    });
+            },
+        });
     }, []);
 
     useLayoutEffect(() => {
-        tl.current = gsap.to(q(".description"), {
-            scrollTrigger: {
-                trigger: ".description",
-                start: "top 65%",
-                endTrigger: ".contestRoot",
-                end: "top 0%",
-                scrub: !0,
-                onEnter: () =>
-                    q(".dec-li:nth-of-type(1)")[0].classList.add("dec-li--active"),
-                onEnterBack: () =>
-                    q(".dec-li:nth-of-type(1)")[0].classList.add("dec-li--active"),
-                onLeaveBack: () =>
-                    q(".dec-li:nth-of-type(1)")[0].classList.remove("dec-li--active"),
-                onLeave: () =>
-                    q(".dec-li:nth-of-type(1)")[0].classList.remove("dec-li--active"),
+        ScrollTrigger.matchMedia({
+            "(min-width: 992px)": function() {
+                tl.current = gsap.to(q(".description"), {
+                    scrollTrigger: {
+                        trigger: ".description",
+                        start: "top 65%",
+                        endTrigger: ".contestRoot",
+                        end: "top 0%",
+                        scrub: !0,
+                        onEnter: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onEnterBack: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onLeaveBack: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                        onLeave: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                    },
+                });
+                tl.current = gsap.to(q(".description"), {
+                    scrollTrigger: {
+                        trigger: ".description",
+                        start: "top 55%",
+                        endTrigger: ".contestRoot",
+                        end: "top 0%",
+                        scrub: !0,
+                        onEnter: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onEnterBack: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onLeaveBack: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                        onLeave: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                    },
+                });
+                tl.current = gsap.to(q(".description"), {
+                    scrollTrigger: {
+                        trigger: ".description",
+                        start: "top 45%",
+                        endTrigger: ".contestRoot",
+                        end: "top 0%",
+                        scrub: !0,
+                        onEnter: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onEnterBack: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onLeaveBack: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                        onLeave: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                    },
+                });
             },
-        });
-        tl.current = gsap.to(q(".description"), {
-            scrollTrigger: {
-                trigger: ".description",
-                start: "top 55%",
-                endTrigger: ".contestRoot",
-                end: "top 0%",
-                scrub: !0,
-                onEnter: () =>
-                    q(".dec-li:nth-of-type(2)")[0].classList.add("dec-li--active"),
-                onEnterBack: () =>
-                    q(".dec-li:nth-of-type(2)")[0].classList.add("dec-li--active"),
-                onLeaveBack: () =>
-                    q(".dec-li:nth-of-type(2)")[0].classList.remove("dec-li--active"),
-                onLeave: () =>
-                    q(".dec-li:nth-of-type(2)")[0].classList.remove("dec-li--active"),
-            },
-        });
-        tl.current = gsap.to(q(".description"), {
-            scrollTrigger: {
-                trigger: ".description",
-                start: "top 45%",
-                endTrigger: ".contestRoot",
-                end: "top 0%",
-                scrub: !0,
-                onEnter: () =>
-                    q(".dec-li:nth-of-type(3)")[0].classList.add("dec-li--active"),
-                onEnterBack: () =>
-                    q(".dec-li:nth-of-type(3)")[0].classList.add("dec-li--active"),
-                onLeaveBack: () =>
-                    q(".dec-li:nth-of-type(3)")[0].classList.remove("dec-li--active"),
-                onLeave: () =>
-                    q(".dec-li:nth-of-type(3)")[0].classList.remove("dec-li--active"),
-            },
-        });
+            "(max-width: 991px)": function() {
+                tl.current = gsap.to(q(".description"), {
+                    scrollTrigger: {
+                        trigger: ".description",
+                        start: "top 65%",
+                        endTrigger: ".contestRoot",
+                        end: "top 0%",
+                        scrub: !0,
+                        onEnter: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onEnterBack: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onLeaveBack: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                        onLeave: () =>
+                            q(".dec-li:nth-of-type(1)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                    },
+                });
+                tl.current = gsap.to(q(".description"), {
+                    scrollTrigger: {
+                        trigger: ".description",
+                        start: "top 40%",
+                        endTrigger: ".contestRoot",
+                        end: "top 0%",
+                        scrub: !0,
+                        onEnter: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onEnterBack: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onLeaveBack: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                        onLeave: () =>
+                            q(".dec-li:nth-of-type(2)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                    },
+                });
+                tl.current = gsap.to(q(".description"), {
+                    scrollTrigger: {
+                        trigger: ".description",
+                        start: "top 15%",
+                        endTrigger: ".contestRoot",
+                        end: "top 0%",
+                        scrub: !0,
+                        onEnter: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onEnterBack: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.add(
+                                "dec-li--active"
+                            ),
+                        onLeaveBack: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                        onLeave: () =>
+                            q(".dec-li:nth-of-type(3)")[0].classList.remove(
+                                "dec-li--active"
+                            ),
+                    },
+                });
+            }
+        })
     }, []);
 
     return (
