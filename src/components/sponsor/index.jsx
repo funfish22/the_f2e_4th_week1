@@ -1,11 +1,37 @@
+import { useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./style.module.scss";
 import sponsor01 from "@/assets/images/sponsor/sponsor01.png";
 import sponsor02 from "@/assets/images/sponsor/sponsor02.png";
 import sponsor03 from "@/assets/images/sponsor/sponsor03.png";
 
 const Sponsor = () => {
+    gsap.registerPlugin(ScrollTrigger);
+    const el = useRef();
+    const q = gsap.utils.selector(el);
+    const tl = useRef();
+
+    useLayoutEffect(() => {
+        tl.current = gsap.to(q(".sponsor-list"), {
+            scrollTrigger: {
+                trigger: ".sponsorRoot",
+                start: "top center",
+                scrub: !0,
+                onEnter: () =>
+                    q(".sponsor-list")[0].classList.add("sponsor-list--active"),
+                onEnterBack: () =>
+                    q(".sponsor-list")[0].classList.add("sponsor-list--active"),
+                onLeaveBack: () =>
+                    q(".sponsor-list")[0].classList.remove("sponsor-list--active"),
+                onLeave: () =>
+                    q(".sponsor-list")[0].classList.remove("sponsor-list--active"),
+            },
+        });
+    })
+
     return (
-        <section className={styles.root}>
+        <section className={styles.root} ref={el}>
             <div className="sponsorRoot">
                 <div className="container">
                     <h1 className="title">贊助單位</h1>
