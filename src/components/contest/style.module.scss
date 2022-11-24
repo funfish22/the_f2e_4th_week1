@@ -1,9 +1,14 @@
+@import "../../assets/style/unit";
+
 .root {
     :global {
         .contestRoot {
             background: url('../../assets/images/theme/theme-bg.png') center center/cover fixed;
             padding-top: 70px;
             position: relative;
+            @include rwdw(991) {
+                padding-top: 30.76923vw;
+            }
         }
         .contestTitle {
             display: flex;
@@ -11,11 +16,23 @@
             align-items: center;
         }
         .fist {
+            @include rwdw(991) {
+                display: none;
+            }
             &--left {
                 margin-right: 48px;
             }
             &--right {
                 margin-left: 33px;
+            }
+        }
+        .fistMobile {
+            display: none;
+            @include rwdw(991) {
+                display: block;
+                position: absolute;
+                top: 1.7949vw;
+                left: 0;
             }
         }
         .contestDec {
@@ -28,14 +45,29 @@
             padding: 36px;
             color: #fff;
             font-size: 24px;
+            @include rwdw(991) {
+                margin: 6.410256vw auto 17.94872vw;
+                max-width: 100%;
+                padding: 8.974359vw 4.615385vw;
+                font-size: 4.615385vw;
+            }
             &__title {
                 margin-bottom: 24px;
+                @include rwdw(991) {
+                    margin-bottom: 4.615385vw;
+                }
             }
             &-list {
                 display: flex;
                 &__title {
+                    white-space: nowrap;
                     &::after {
                         content: '：';
+                    }
+                }
+                @include rwdw(991) {
+                    & + .contestDec-list {
+                        margin-top: 4.615385vw;
                     }
                 }
             }
@@ -45,12 +77,21 @@
             padding-bottom: 150px;
             background: url(../../assets/images/contest/decorate.png) center bottom no-repeat;
             position: relative;
+            @include rwdw(991) {
+                background: none;
+                padding-bottom: 20.641025641vw;
+            }
             &__title {
                 font-size: 48px;
                 color: transparent;
                 -webkit-text-stroke: 2px #fff;
                 text-align: center;
                 margin-bottom: 80px;
+                @include rwdw(991) {
+                    font-size: 6.153846vw;
+                    margin-bottom: 12.820513vw;
+                    line-height: 1.5833333;
+                }
             }
             &-li {
                 &-title {
@@ -62,16 +103,32 @@
                     margin-bottom: 30px;
                     &__icon {
                         margin-right: 12px;
+                        @include rwdw(991) {
+                            margin-right: 2.564103vw;
+                        }
+                    }
+                    &__text {
+                        white-space: nowrap;
+                        @include rwdw(991) {
+                            font-size: 4.6153846vw;
+                        }
                     }
                 }
                 &__img {
                     max-width: 255px;
+                    @include rwdw(991) {
+                        max-width: 35.8974358974vw;
+                        max-height: 25.6410256vw;
+                    }
                 }
                 &-dec {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     height: 200px;
+                    @include rwdw(991) {
+                        height: auto;
+                    }
                 }
                 &-info {
                     margin-left: 16px;
@@ -82,21 +139,34 @@
                         color: #fff;
                         white-space: nowrap;
                         margin-bottom: 12px;
+                        @include rwdw(991) {
+                            font-size: 4.6153846vw;
+                            margin-bottom: 3.076923vw;
+                        }
                     }
                     &__text {
                         font-size: 20px;
                         color: #bdbdbd;
+                        @include rwdw(991) {
+                            font-size: 3.58974359vw;
+                        }
                     }
                 }
             }
             &-swiper {
                 padding-top: 100px;
+                @include rwdw(991) {
+                    padding-top: 0;
+                }
                 .swiper-slide {
                     transition: margin-top 0.2s;
                     height: 270px;
                 }
                 .swiper-slide-active {
                     margin-top: -100px;
+                    @include rwdw(991) {
+                        margin-top: 0;
+                    }
                     .awards {
                         &-li {
                             &-title {
@@ -118,6 +188,9 @@
                 bottom: 80px;
                 left: 50%;
                 transform: translateX(-50%);
+                @include rwdw(991) {
+                    bottom: 25.641025641vw;
+                }
             }
         }
     }

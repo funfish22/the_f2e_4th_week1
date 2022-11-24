@@ -1,3 +1,5 @@
+@import "../../assets/style/unit";
+
 .root {
     :global {
         .sponsor {
@@ -7,6 +9,10 @@
                 position: relative;
                 background: url('../../assets/images/sponsor/sponsorBG.png') center center/cover;
                 text-align: center;
+                @include rwdw(991) {
+                    padding-top: 38.461538vw;
+                    padding-bottom: 17.948718vw;
+                }
             }
             &-list {
                 margin: 70px 0 120px;
@@ -19,11 +25,24 @@
                     opacity: 1;
                     transform: translateY(0px);
                 }
+                @include rwdw(991) {
+                    margin: 8.974359vw 0 17.948718vw;
+                }
+                &__li {
+                    @include rwdw(991) {
+                        max-width: 203px;
+                        width: 28.205128vw;
+                    }
+                }
             }
         }
         .title {
             color: #fff;
             -webkit-text-stroke: initial;
+            @include rwdw(991) {
+                font-size: 12.3076923077vw;
+                line-height: 1.1458333;
+            }
         }
         .registrationBtn {
             font-size: 48px;
@@ -33,6 +52,16 @@
             border: 8px solid #FFBFFC;
             border-radius: 20px;
             display: inline-block;
+            @include rwdw(991) {
+                font-size: 6.153846vw;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 25.6410256vw;
+                border-radius: 5.128205vw;
+                border-width: 1.5384615vw;
+            }
         }
     }
 }

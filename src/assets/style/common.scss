@@ -1,3 +1,5 @@
+@import "./unit";
+
 .container {
     max-width: 1440px;
     width: 90%;
@@ -9,8 +11,15 @@
     -webkit-text-stroke: 2px #FDFFA9;
     text-align: center;
     line-height: 1.0606;
+    @include rwdw(991) {
+        font-size: 6.153846vw;
+        line-height: 1.58333;
+    }
     &__big {
         font-size: 66px;
+        @include rwdw(991) {
+            font-size: 7.179487vw;
+        }
     }
 }
 .subtitle {
@@ -19,4 +28,8 @@
     color: #fff;
     text-align: center;
     margin-top: 34px;
+    @include rwdw(991) {
+        font-size: 4.6153846vw;
+        margin-top: 7.6923vw;
+    }
 }

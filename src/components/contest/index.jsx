@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import styles from "./style.module.scss";
 import fistLeft from "@/assets/images/contest/fist-left.png";
 import fistRight from "@/assets/images/contest/fist-right.png";
+import fistMobile from "@/assets/images/contest/fist-mobile.png";
 import podium from "@/assets/images/contest/podium.png";
 
 const Contest = () => {
@@ -31,22 +32,23 @@ const Contest = () => {
         }
     };
     const onSlideChange = (swiper) => {
-        if(!!list[swiper.realIndex].data) {
-            const newList = JSON.parse(JSON.stringify(list))
-            newList[swiper.realIndex].data.prizeValue = 0
-            setList(newList)
+        if (!!list[swiper.realIndex].data) {
+            const newList = JSON.parse(JSON.stringify(list));
+            newList[swiper.realIndex].data.prizeValue = 0;
+            setList(newList);
             setTimeout(() => {
-                setList(contestData)
-            }, 100)
+                setList(contestData);
+            }, 100);
         }
     };
     useEffect(() => {
-        const list = JSON.parse(JSON.stringify(contestData))
+        const list = JSON.parse(JSON.stringify(contestData));
         setList(list);
     }, []);
     return (
         <section className={styles.root}>
             <div className="contestRoot">
+                <img className="fistMobile" src={fistMobile} alt="fistMobile" />
                 <div className="container">
                     <div className="contestTitle">
                         <img
@@ -88,13 +90,19 @@ const Contest = () => {
                         {list.length > 0 && (
                             <Swiper
                                 modules={[Navigation]}
-                                spaceBetween={30}
-                                slidesPerView={3}
+                                slidesPerView={1}
                                 navigation
                                 loop={true}
                                 centeredSlides={true}
                                 className="awards-swiper"
                                 onSlideChange={onSlideChange}
+                                breakpoints={{
+                                    // when window width is >= 991px
+                                    992: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 30
+                                    },
+                                }}
                             >
                                 {list.map((item, index) => {
                                     return (

@@ -1,14 +1,25 @@
+@import "../../assets/style/unit";
+
 .banner {
     background: url('../../assets/images/banner/bg.png');
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
+    @include rwdw(991) {
+        flex-wrap: wrap;
+        padding-top: 32.05128vw;
+        min-height: auto;
+    }
 }
 
 .hero {
     position: relative;
     padding-left: 5.208333vw;
+    @include rwdw(991) {
+        width: 100%;
+        padding: 0;
+    }
     &__title {
         color: transparent;
         text-align: center;
@@ -20,6 +31,10 @@
             -webkit-text-stroke: 3px #eefbff;
             animation: light 1.5s both linear infinite;
             margin-bottom: 40px;
+            @include rwdw(991) {
+                font-size: 12.30769vw;
+                margin-bottom: 8.205128vw;
+            }
         }
         &--cn {
             font-size: 5.104167vw;
@@ -27,6 +42,10 @@
             -webkit-text-stroke: 3px #fdffa9;
             // animation: light2 1.5s both ease-in-out infinite;
             margin-bottom: 100px;
+            @include rwdw(991) {
+                font-size: 8.205128vw;
+                margin-bottom: 11.282vw;
+            }
         }
     }
     &__info {
@@ -35,6 +54,9 @@
         text-align: center;
         line-height: 1.58333;
         // animation: flicker 1.5s both ease-in-out infinite;
+        @include rwdw(991) {
+            font-size: 4.6153846vw;
+        }
     }
     &__lightning {
         position: absolute;
@@ -54,6 +76,9 @@
         top: -114px;
         right: -67px;
         // animation: flicker 0.8s both ease-in-out infinite;
+        @include rwdw(991) {
+            display: none;
+        }
     }
 }
 
@@ -63,6 +88,11 @@
     align-self: flex-end;
     right: 0;
     bottom: 0;
+    @include rwdw(991) {
+        width: 100%;
+        position: static;
+        margin-top: 8.9743589vw;
+    }
 }
 
 

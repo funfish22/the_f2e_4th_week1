@@ -1,3 +1,5 @@
+@import "../../../../assets/style/unit";
+
 .root {
     :global {
         .introduce {
@@ -10,6 +12,11 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            @include rwdw(991) {
+                padding: 10.25641vw 10.25641vw 19.2307692vw;
+                flex-direction: column-reverse;
+                border-radius: 5.1282vw;
+            }
             &:after,
             &:before {
                 content: "";
@@ -24,6 +31,11 @@
                 border-top-left-radius: 10px;
                 top: 20px;
                 left: 20px;
+                @include rwdw(991) {
+                    border-top-left-radius: 2.564102vw;
+                    top: 4.1026vw;
+                    left: 4.1026vw;
+                }
             }
             &:before {
                 border-right: 3px solid #9affff;
@@ -31,6 +43,11 @@
                 border-bottom-right-radius: 10px;
                 right: 20px;
                 bottom: 20px;
+                @include rwdw(991) {
+                    border-bottom-right-radius: 2.564102vw;
+                    right: 4.1026vw;
+                    bottom: 4.1026vw;
+                }
             }
             &--yellow {
                 border-color: #fdffa9;
@@ -39,18 +56,32 @@
             &--blue {
                 border-color: #9affff;
                 box-shadow: 0 0 10px #9affff;
+                @include rwdw(991) {
+                    margin-top: 8.974358vw !important;
+                }
             }
             &--purple {
                 border-color: #f19aff;
                 box-shadow: 0 0 10px #f19aff;
+                @include rwdw(991) {
+                    margin-top: 8.974358vw !important;
+                }
             }
             &-content {
                 margin-left: 66px;
+                @include rwdw(991) {
+                    margin-left: 0;
+                    margin-bottom: 10.2564vw;
+                }
                 &__subtitle {
                     font-size: 20px;
                     line-height: 1.9;
                     color: #fff;
                     margin-bottom: 2px;
+                    @include rwdw(991) {
+                        font-size: 4.102564vw;
+                        line-height: 2.375;
+                    }
                 }
                 &__title {
                     font-size: 40px;
@@ -58,6 +89,10 @@
                     color: transparent;
                     -webkit-text-stroke: 2px #eefbff;
                     margin-bottom: 24px;
+                    @include rwdw(991) {
+                        font-size: 6.153846vw;
+                        margin-bottom: 4.1026vw;
+                    }
                 }
                 &__info {
                     font-size: 18px;
@@ -65,6 +100,11 @@
                     color: #bdbdbd;
                     margin-bottom: 15px;
                     max-width: 436px;
+                    @include rwdw(991) {
+                        font-size: 4.615384vw;
+                        max-width: none;
+                        margin-bottom: 1.53846vw;
+                    }
                 }
                 &__more {
                     color: #fff;
@@ -74,6 +114,12 @@
                     padding: 10px 42px;
                     display: inline-block;
                     transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+                    @include rwdw(991) {
+                        font-size: 4.6153846vw;
+                        line-height: 1;
+                        padding: 2.564102vw 10.76923vw;
+                        border-radius: 2.564102vw;
+                    }
                     &:hover {
                         color: #fdffa9;
                         border-color: #fdffa9;
@@ -83,10 +129,17 @@
             }
             &-list {
                 margin-bottom: 25px;
+                @include rwdw(991) {
+                    margin-bottom: 6.1538vw;
+                }
                 &__li {
                     font-size: 20px;
                     line-height: 1.25;
                     color: #fff;
+                    @include rwdw(991) {
+                        font-size: 4.102564vw;
+                        line-height: 1.5625;
+                    }
                     &:before {
                         content: "#";
                     }
@@ -96,6 +149,15 @@
                 position: absolute;
                 top: -86px;
                 left: 30px;
+                @include rwdw(991) {
+                    display: none;
+                }
+            }
+            &__img {
+                @include rwdw(991) {
+                    max-width: 222px;
+                    width: 56.923077vw;
+                }
             }
         }
     }

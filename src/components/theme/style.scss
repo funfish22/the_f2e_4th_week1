@@ -1,6 +1,9 @@
+@import "../../assets/style/unit";
+
 .theme {
     position: relative;
     padding-top: 140px;
+    overflow: hidden;
     &-decorate {
         position: absolute;
         &--star1 {
@@ -22,6 +25,11 @@
     }
 }
 .house {
+    @include rwdw(991) {
+        width: 200%;
+        max-width: none;
+        margin-left: -66.66666%;
+    }
     &Root {
         position: relative;
     }
@@ -44,6 +52,9 @@
     background: url('../../assets/images/theme/theme-bg.png') center center/cover fixed;
     padding: 110px 0 60px;
     position: relative;
+    @include rwdw(991) {
+        padding: 24.35897vw 0;
+    }
 }
 
 .circleFilter {

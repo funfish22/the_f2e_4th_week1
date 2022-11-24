@@ -1,9 +1,16 @@
+@import "../../assets/style/unit";
+
 .root {
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 60px 0;
+    text-align: center;
+    @include rwdw(991) {
+        font-size: 4.102564vw;
+        padding: 6.4102564vw 0;
+    }
     :global {
         .registrationBtnNow {
             width: 150px;
@@ -22,6 +29,9 @@
             right: 50px;
             bottom: 50px;
             z-index: 100;
+            @include rwdw(991) {
+                display: none;
+            }
         }
     }
 }
